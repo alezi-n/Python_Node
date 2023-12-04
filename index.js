@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 let imcGlobal;
 let classificacaoGlobal;
 
-app.post('/verificar-imc', (req, res) => {
+app.get('/verificar-imc', (req, res) => {
   const imc = parseFloat(req.body.imc);
   
   // Verificar a classificação do IMC
@@ -34,12 +34,7 @@ app.post('/verificar-imc', (req, res) => {
   res.json({ imc: imc, classificacao: classificacao });
 });
 
-app.get('/verificar-imc', (req, res) => {
-  // Enviar a resposta com o IMC e a classificação
-  res.json({ imc: imcGlobal, classificacao: classificacaoGlobal });
-});
-
 const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Servidor está rodando na porta ${PORT}`);
 });
