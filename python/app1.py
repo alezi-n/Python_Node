@@ -5,8 +5,6 @@ app = Flask(__name__)
 
 @app.route('/calcularIMC', methods=['POST'])
 def Calcular_imc():
-    global imc_global, classificacao_global
-
     if request.method == 'POST':
         data = request.get_json()
         print(data)
